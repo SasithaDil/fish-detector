@@ -1,5 +1,6 @@
 import 'package:fish_detector/core/assets.dart';
 import 'package:fish_detector/core/media_queries.dart';
+import 'package:fish_detector/features/home/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -22,56 +23,19 @@ class _HomeState extends State<Home> {
           SizedBox(
             height: context.mQHeight * 0.2,
           ),
-          GestureDetector(
-            onTap: () {
-              picker.pickImage(source: ImageSource.camera);
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: context.mQHeight * 0.1,
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Capture fish",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          CustomButton(
+            picker: picker,
+            onTap: () => picker.pickImage(source: ImageSource.camera),
+            text: "Capture fish",
           ),
-          GestureDetector(
-            onTap: () {
-              picker.pickImage(source: ImageSource.gallery);
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: context.mQHeight * 0.1,
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Upload fish",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          CustomButton(
+            picker: picker,
+            onTap: () => picker.pickImage(source: ImageSource.gallery),
+            text: "Upload fish",
           ),
         ],
       ),
     );
   }
 }
+
