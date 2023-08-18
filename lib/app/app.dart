@@ -18,7 +18,7 @@ class _AppState extends State<App> {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: router.Router.generateRoute,
-      initialRoute: router.ScreenRoutes.toSplashScreen
+      initialRoute: router.ScreenRoutes.toHomeScreen
     );
   }
 }

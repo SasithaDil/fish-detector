@@ -1,19 +1,19 @@
-import 'package:fish_detector/features/splash_screen.dart';
+import 'package:fish_detector/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class ScreenRoutes {
-  static const String toSplashScreen = 'toSplashScreen';
+  static const String toHomeScreen = 'toHomeScreen';
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // var args = settings.arguments;
     switch (settings.name) {
-      case ScreenRoutes.toSplashScreen:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case ScreenRoutes.toHomeScreen:
+        return MaterialPageRoute(builder: (_) => const Home());
       default:
         return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
+          builder: (_) => const Home(),
         );
     }
   }
