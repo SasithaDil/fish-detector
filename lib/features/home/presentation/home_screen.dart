@@ -36,7 +36,31 @@ class _HomeState extends State<Home> {
                 ),
                 child: const Center(
                   child: Text(
-                    "Detect fish",
+                    "Capture fish",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              picker.pickImage(source: ImageSource.gallery);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                height: context.mQHeight * 0.1,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Upload fish",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
